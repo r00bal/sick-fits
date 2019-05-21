@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import CreateItem from '../components/CreateItem';
+
 const Sell = props => (
   <div>
-    <p>Sell!</p>
-    <Link href="/">Home!</Link>
+    <CreateItem />
   </div>
 );
 
