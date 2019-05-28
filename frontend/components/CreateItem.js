@@ -79,7 +79,7 @@ class CreateItem extends Component {
               <label htmlFor="title">
                 Title
                 <input
-                  type="text"
+                             type="text"
                   id="title"
                   name="title"
                   placeholder="Title"

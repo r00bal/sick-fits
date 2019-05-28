@@ -36,6 +36,7 @@ build/Release
 node_modules/
 .next/q
 jspm_packages/
+.next/
 
 # Typescript v1 declaration files
 typings/
@@ -68,3 +69,4 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+.gitignore
