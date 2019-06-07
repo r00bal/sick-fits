@@ -3,6 +3,7 @@ import NavStyles from './styles/NavStyles';
 import Sell from '../pages/sell';
 import Router from 'next/router';
 import User from './User';
+import Signout from './Signout';
 
 const Nav = () => (
   <User>
@@ -22,6 +23,7 @@ const Nav = () => (
             <Link href="/me">
               <a>Account</a>
             </Link>
+            <Signout />
           </>
         )}
         {!me && (
