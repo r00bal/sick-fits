@@ -8,9 +8,9 @@ enum Permission {
 }
 
 type User {
-  id: ID! @Unique @id
+  id: ID! @unique @id
   name: String!
-  email: String! @Unique
+  email: String! @unique
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
   password: String!
