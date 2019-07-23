@@ -5,6 +5,7 @@ import Sell from '../pages/sell';
 import Router from 'next/router';
 import User from './User';
 import Signout from './Signout';
+import CartCount from './CartCount';
 import { LOCAL_STATE_QUERY, TOGGLE_CART_MUTATION } from './Cart';
 
 const Nav = () => (
@@ -16,6 +17,7 @@ const Nav = () => (
         </Link>
         {me && (
           <>
+            {console.log({ me })}
             <Link href="/sell">
               <a>Sell</a>
             </Link>
@@ -27,7 +29,17 @@ const Nav = () => (
             </Link>
             <Signout />
             <Mutation mutation={TOGGLE_CART_MUTATION}>
-              {toggleCart => <button onClick={toggleCart}>My cart</button>}
+              {toggleCart => (
+                <button onClick={toggleCart}>
+                  My cart
+                  <CartCount
+                    count={me.cart.reduce(
+                      (tally, cartItem) => tally + cartItem.quantity,
+                      0
+                    )}
+                  />
+                </button>
+              )}
             </Mutation>
           </>
         )}
