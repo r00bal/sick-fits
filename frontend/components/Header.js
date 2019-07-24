@@ -4,6 +4,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import Nav from './Nav';
 import Cart from './Cart';
+import Search from './Search';
 
 const handleRouteChangeStart = () => {
   NProgress.start();
@@ -69,11 +70,10 @@ const Header = () => (
           <a>Sick Fits</a>
         </Link>
       </Logo>
-
       <Nav />
     </div>
     <div className="sub-bar">
-      <p>Search</p>
+      <Search />
     </div>
     <Cart />
   </StyledHeader>
