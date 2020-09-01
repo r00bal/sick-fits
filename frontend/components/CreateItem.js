@@ -28,10 +28,11 @@ const CREATE_ITEM_MUTATION = gql`
 
 class CreateItem extends Component {
   state = {
-    title: 'it',
-    description: 'hello',
-    image: 'img',
-    price: 5
+    title: '',
+    description: '',
+    image: '',
+    largeImage: '',
+    price: 0
   };
   handleChange = e => {
     const { name, type, value } = e.target;
@@ -54,7 +55,6 @@ class CreateItem extends Component {
       }
     );
     const file = await res.json();
-    console.log(file);
     this.setState({
       image: file.secure_url,
       largeImage: file.eager[0].secure_url
@@ -65,10 +65,10 @@ class CreateItem extends Component {
       <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
         {(createItem, { loading, error }) => (
           <Form
+            data-test="form"
             onSubmit={async e => {
               e.preventDefault();
               const res = await createItem();
-              console.log(res);
               Router.push({
                 pathname: '/items',
                 query: { id: res.data.createItem.id }

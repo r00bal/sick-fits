@@ -24,7 +24,7 @@ export default class Item extends PureComponent {
               pathname: '/item',
               query: { id: item.id }
             }}>
-            <a> {item.title}</a>
+            <a>{item.title}</a>
           </Link>
         </Title>
         <PriceTag>{formatMoney(item.price)}</PriceTag>

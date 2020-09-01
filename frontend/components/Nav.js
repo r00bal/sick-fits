@@ -11,13 +11,13 @@ import { LOCAL_STATE_QUERY, TOGGLE_CART_MUTATION } from './Cart';
 const Nav = () => (
   <User>
     {({ data: { me } }) => (
-      <NavStyles>
+      <NavStyles data-test="nav">
         <Link href="/items">
           <a>Shop</a>
         </Link>
         {me && (
           <>
-            {console.log({ me })}
+
             <Link href="/sell">
               <a>Sell</a>
             </Link>

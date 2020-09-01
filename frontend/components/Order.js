@@ -44,7 +44,7 @@ class Order extends Component {
      console.log(data);
      const order = data.order;
      return (
-      <OrderStyles>
+      <OrderStyles data-test="order">
        <Head>Sick Fits - Order {order.id}</Head>
        <p>
         <span>Order ID: </span>
@@ -90,3 +90,5 @@ class Order extends Component {
 }
 
 export default Order;
+
+export { SINGLE_ORDER_QUERY };

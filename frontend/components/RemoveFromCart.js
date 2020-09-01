@@ -29,11 +29,11 @@ class RemoveFromCart extends Component {
   };
   // This gets called as soon as we get a response back from the server a mutation has been performed
   update = (cache, payload) => {
-    console.log('Running remove from the cart function');
+    //console.log('Running remove from the cart function');
     // first read the cache
     const data = cache.readQuery({ query: CURRENT_USER_QUERY });
-    console.log(data);
-    console.log(payload);
+    //console.log(data);
+    //console.log(payload);
     // remove that item from the cart
     const cartItemId = payload.data.removeFromCart.id;
     data.me.cart = data.me.cart.filter(cartItem => cartItem.id !== cartItemId);
@@ -69,3 +69,5 @@ class RemoveFromCart extends Component {
 }
 
 export default RemoveFromCart;
+
+export { REMOVE_FROM_CART_MUTATION };
